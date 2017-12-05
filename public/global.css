@@ -1,7 +1,4 @@
 /* line 8, ../sass/circle/core/_reset.sass */
-/** {
-  color: red
-}*/
 
 html {
   font-family: sans-serif;
@@ -2176,7 +2173,7 @@ body {
 .app--section {
   height: 100%;
   border-right: 1px solid #e1e1e1;
-  overflow-Y: scroll;
+  overflow-y: scroll;
 }
 /* line 50, ../sass/global.sass */
 .grid-33:last-child .app--section {
@@ -2285,11 +2282,16 @@ a:hover .app--avatar {
 .over-tweeted .app--tweet--char {
   color: #ed5a5a;
 }
+
+
 /* line 131, ../sass/global.sass */
-.app--tweet--list, .app--user--list {
+.app--tweet--list, .app--user--list { /*HAD TO ADD SOME SPACE ABOVE LIST SO THAT AL LI'S WOULD BE VISIBLE, WIERD ISSUE*/
   list-style: none;
   padding-bottom: 195px;
+  margin-top: 7em; 
 }
+
+
 /* line 134, ../sass/global.sass */
 .app--tweet--list > li, .app--user--list > li {
   padding: 20px 20px 20px 90px;
@@ -2420,12 +2422,17 @@ a:hover .app--avatar {
   bottom: 10px;
   margin: 0;
 }
+
+
 /* line 216, ../sass/global.sass */
-.app--message--list > li {
+.app--message--list > li {   /*THIS ALSO NEEDED SPACE...*/
   padding: 15px 20px;
   margin: 0;
   border-bottom: 4px solid #f1f1f1;
+  margin-top: 7em; 
 }
+
+
 /* line 220, ../sass/global.sass */
 .app--message--list h3 {
   font-weight: normal;
