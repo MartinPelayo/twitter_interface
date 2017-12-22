@@ -10,7 +10,7 @@ app.use(express.static('public'));  //and static server
 
 app.use('/', function (req, Res) {  //Renders twitter info to with '/' route
   //Subsequent requests get pertanent twitter data
-  T.get('statuses/user_timeline', {screen_name: '_martinezP', count: '5'},  function (err, data, res) {
+  T.get('statuses/user_timeline', {count: '5'},  function (err, data, res) {
     let profileImage = data[0].user.profile_image_url;
     let name = data[0].user.name;
     let myhandle = data[0].user.screen_name;
@@ -39,7 +39,7 @@ app.use('/', function (req, Res) {  //Renders twitter info to with '/' route
     let tweet5RetweetNum = data[4].retweet_count;
     let tweet5Likes = data[4].favorite_count;
     let tweet5Date = data[4].created_at;
-    T.get('followers/list', {screen_name: '_martinezP', count: '5'},  function (err, data, res) {
+    T.get('followers/list', {count: '5'},  function (err, data, res) {
       let friend1 = data.users[0].name;
       let friend1ProfilePic = data.users[0].profile_image_url;
       let friend1Handle = data.users[0].screen_name;
