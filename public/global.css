@@ -2288,7 +2288,7 @@ a:hover .app--avatar {
 .app--tweet--list, .app--user--list { /*HAD TO ADD SOME SPACE ABOVE LIST SO THAT AL LI'S WOULD BE VISIBLE, WIERD ISSUE*/
   list-style: none;
   padding-bottom: 195px;
-  margin-top: 7em; 
+  /*margin-top: 7em; commented out because the problem seemed to go away for some reason*/ 
 }
 
 
@@ -2429,7 +2429,7 @@ a:hover .app--avatar {
   padding: 15px 20px;
   margin: 0;
   border-bottom: 4px solid #f1f1f1;
-  margin-top: 7em; 
+  /*margin-top: 7em;  commented out because the problem seemed to go away for some reason */
 }
 
 
