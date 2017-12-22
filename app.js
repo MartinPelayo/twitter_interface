@@ -10,8 +10,10 @@ app.use(express.static('public'));  //and static server
 
 app.use('/', function (req, Res) {  //Renders twitter info to with '/' route
   //Subsequent requests get pertanent twitter data
-  T.get('statuses/user_timeline', {screen_name: '_martinezP' ,count: '5'},  function (err, data, res) {
+  T.get('statuses/user_timeline', {screen_name: '_martinezP', count: '5'},  function (err, data, res) {
     let profileImage = data[0].user.profile_image_url;
+    let name = data[0].user.name;
+    let myhandle = data[0].user.screen_name;
 
     let tweet1 = data[0].text;
     let tweet1RetweetNum = data[0].retweet_count;
@@ -37,8 +39,7 @@ app.use('/', function (req, Res) {  //Renders twitter info to with '/' route
     let tweet5RetweetNum = data[4].retweet_count;
     let tweet5Likes = data[4].favorite_count;
     let tweet5Date = data[4].created_at;
-
-    T.get('followers/list', {screen_name: '_martinezP' ,count: '5'},  function (err, data, res) {
+    T.get('followers/list', {screen_name: '_martinezP', count: '5'},  function (err, data, res) {
       let friend1 = data.users[0].name;
       let friend1ProfilePic = data.users[0].profile_image_url;
       let friend1Handle = data.users[0].screen_name;
@@ -75,8 +76,10 @@ app.use('/', function (req, Res) {  //Renders twitter info to with '/' route
         let message5 = data[4].text;
         let dateAndTime5 = data[4].created_at;
 
-        Res.render('index',{  //Render info for pug page
+        Res.render('index', {  //Render info for pug page
           profImage: profileImage,
+          name: name,
+          myhandle: myhandle,
 
           tuweet1: tweet1,
           tweet1ReCount: tweet1RetweetNum,
