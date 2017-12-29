@@ -39,6 +39,7 @@ app.use('/', function (req, Res) {  //Renders twitter info to with '/' route
     let tweet5RetweetNum = data[4].retweet_count;
     let tweet5Likes = data[4].favorite_count;
     let tweet5Date = data[4].created_at;
+
     T.get('followers/list', {count: '5'},  function (err, data, res) {
       let friend1 = data.users[0].name;
       let friend1ProfilePic = data.users[0].profile_image_url;
